@@ -5,7 +5,7 @@
 >
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mageddo.tests</groupId>
-	<artifactId>jetty-junit-tests</artifactId>
+	<artifactId>jetty-integration-tests</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
 	<dependencies>
@@ -41,26 +41,7 @@
 					<stopPort>9999</stopPort>
 					<scanIntervalSeconds>0</scanIntervalSeconds>
 					<webAppConfig>
-						<contextPath>/${project.artifactId}</contextPath>
-
-						
-<!--						for setup another resources bases
-						<resourceBases>
-							<resourceBase>${project.basedir}/src/main/webapp</resourceBase>
-							<resourceBase>${project.basedir}/../other-project/src/main/webapp</resourceBase>
-							<resourceBase>${project.basedir}/src/test/webapp</resourceBase>
-							<resourceBase>${project.build.directory}/java-applets</resourceBase>
-						</resourceBases>
-						
-						
-						for set anothers classpaths
-						<extraClasspath>${project.build.directory}/custom-classes;${project.build.directory}/custom-dependency.jar</extraClasspath>
-						for scan classes folders
-						<scanTargets>
-							<scanTarget>${project.basedir}/src/main/webapp/WEB-INF/classes</scanTarget>
-							<scanTarget>${project.basedir}/src/test/webapp/WEB-INF/classes</scanTarget>
-						</scanTargets>-->
-						
+						<contextPath>/${project.artifactId}</contextPath>	
 					</webAppConfig>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
