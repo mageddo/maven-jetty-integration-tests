@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
->
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mageddo.tests</groupId>
 	<artifactId>jetty-integration-tests</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
 		<!-- Para não gerar exceção -->
 		<dependency>
@@ -27,6 +29,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
@@ -41,7 +44,7 @@
 					<stopPort>9999</stopPort>
 					<scanIntervalSeconds>0</scanIntervalSeconds>
 					<webAppConfig>
-						<contextPath>/${project.artifactId}</contextPath>	
+						<contextPath>/${project.artifactId}</contextPath>
 					</webAppConfig>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
@@ -50,7 +53,7 @@
 					</connectors>
 				</configuration>
 
-				<!--	 to run unit tests -->
+				<!-- to run unit tests -->
 				<executions>
 					<execution>
 						<id>start-jetty</id>
@@ -79,7 +82,7 @@
 				<version>2.18.1</version>
 				<executions>
 					<execution>
-						<id>integration-test</id>						
+						<id>integration-test</id>
 						<configuration>
 							<includes>
 								<include>**/*IT.java</include>
