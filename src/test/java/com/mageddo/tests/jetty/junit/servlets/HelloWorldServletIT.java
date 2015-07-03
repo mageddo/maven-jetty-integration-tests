@@ -32,6 +32,7 @@ public class HelloWorldServletIT {
 			sb.append(buffer);
 		}
 		Assert.assertEquals(HelloWorldServlet.GET_MESSAGE, sb.toString());
+		bf.close();
 	}
 	
 	@Test
@@ -52,5 +53,6 @@ public class HelloWorldServletIT {
 			sb.append(buffer);
 		}
 		Assert.assertEquals(HelloWorldServlet.POST_MESSAGE, sb.toString());
+		bf.close();
 	}
 }
